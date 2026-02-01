@@ -1,18 +1,20 @@
+# amplify.yml
 version: 1
 frontend:
   phases:
     preBuild:
       commands:
+        - cd web-app
         - yarn install
     build:
       commands:
+        - cd web-app
         - yarn build
   artifacts:
-    baseDirectory: .next
+    baseDirectory: web-app/out
     files:
       - '**/*'
   cache:
     paths:
-      - node_modules/**/*
-      - .next/cache/**/*
-
+      - web-app/node_modules/**/*
+      - web-app/.next/cache/**/*
