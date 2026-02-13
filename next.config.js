@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // SSR mode - removed static export
   images: {
-    unoptimized: true,
+    unoptimized: false, // Can use Next.js image optimization with SSR
   },
   trailingSlash: true,
 }
